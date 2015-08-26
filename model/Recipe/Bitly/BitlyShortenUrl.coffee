@@ -3,10 +3,10 @@ class Recipes.BitlyShortenUrl extends Recipes.Bitly
     position = 1
 
     @generateStep(
-      key: "BitlyPickFile"
+      key: "PickFile"
     ,
       $setOnInsert:
-        cls: "BitlyPickFile"
+        cls: "PickFile"
         api: "Bitly"
         scopes: ["*"]
       $set:
