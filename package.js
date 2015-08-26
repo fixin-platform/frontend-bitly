@@ -1,7 +1,7 @@
 var description = {
   summary: "Bitly",
   version: "1.0.0",
-  name: "bitly"
+  name: "frontend-bitly"
 };
 Package.describe(description);
 
