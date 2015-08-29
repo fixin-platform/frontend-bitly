@@ -43,7 +43,7 @@ class Recipes.BitlyShortenUrl extends Recipes.Bitly
             _3DCart:
               avatarId: steps["_3DCartChooseAvatar"].avatarId
               params: {}
-        if Foreach.isDebug
+        if Spire.isDebug
           _.extend input._3DCartDownloadOrders._3DCartReadOrders.input.params,
             datestart: "06/15/2012"
             dateend: "07/15/2012"
