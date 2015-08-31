@@ -1,4 +1,4 @@
-class Recipes.BitlyShortenUrl extends Recipes.Bitly
+class Recipes.BitlyShortenUrls extends Recipes.Bitly
   generateSteps: ->
     position = 1
 

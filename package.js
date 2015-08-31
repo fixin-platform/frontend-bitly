@@ -13,7 +13,5 @@ Package.onUse(function(api) {
   api.use(["frontend-fixtures@1.0.0"]);
   api.imply(["frontend-fixtures"]);
 
-  api.export([
-    "BitlyShortenUrl"
-  ]);
+  api.export([]);
 });
