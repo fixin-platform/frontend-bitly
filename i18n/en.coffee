@@ -1,6 +1,6 @@
 i18n.addResourceBundle("en", "translation",
   Steps:
-    BitlyExportGoogleDrive:
+    BitlyExportGoogleSpreadsheet:
       icon: "bolt"
       default: "Enable automatic export of Bitly data to Google Drive"
       progressBars:

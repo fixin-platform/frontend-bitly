@@ -1,4 +1,4 @@
-class Recipes.BitlyExportGoogleDrive extends Recipes.Bitly
+class Recipes.BitlyExportGoogleSpreadsheet extends Recipes.Bitly
   generateSteps: ->
     position = 1
 
@@ -23,20 +23,20 @@ class Recipes.BitlyExportGoogleDrive extends Recipes.Bitly
         position: position++
     )
     @generateStep(
-      key: "BitlyExportGoogleDrive"
+      key: "BitlyExportGoogleSpreadsheet"
     ,
       $setOnInsert:
-        cls: "BitlyExportGoogleDrive"
+        cls: "BitlyExportGoogleSpreadsheet"
       $set:
         position: position++
     )
 
   input: (step) ->
     switch step.key
-      when "BitlyExportGoogleDrive"
+      when "BitlyExportGoogleSpreadsheet"
         steps = @stepsByKey()
         input =
-          BitlyExportGoogleDrive:
+          BitlyExportGoogleSpreadsheet:
             GoogleWriteSpreadsheets:
               avatarId: steps["GoogleChooseAvatar"].avatarId
               params: {}
@@ -54,7 +54,7 @@ class Recipes.BitlyExportGoogleDrive extends Recipes.Bitly
 
   progressBars: (step) ->
     switch step.key
-      when "BitlyExportGoogleDrive"
+      when "BitlyExportGoogleSpreadsheet"
         skippedActivityIds = []
         skippedActivityIds.push "GoogleWriteSpreadsheets" if step.spreadsheet
         progressBars = @generateProgressBars [
