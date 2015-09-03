@@ -41,11 +41,6 @@ Bitly.requestCredential = function (options, credentialRequestCompleteCallback) 
   });
 };
 
-
-
-
-
-
 //Google = {};
 //
 //// Request Google credentials for the user

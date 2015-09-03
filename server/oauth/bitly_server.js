@@ -79,9 +79,6 @@ Bitly.retrieveCredential = function(credentialToken, credentialSecret) {
   return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };
 
-
-
-
 //Google = {};
 //
 //// https://developers.google.com/accounts/docs/OAuth2Login#userinfocall
