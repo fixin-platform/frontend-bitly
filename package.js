@@ -17,4 +17,3 @@ Package.onUse(function(api) {
     "Bitly"
   ]);
 });
-

@@ -37,10 +37,13 @@ class Recipes.BitlyExportGoogleDrive extends Recipes.Bitly
         steps = @stepsByKey()
         input =
           BitlyExportGoogleDrive:
-            BitlyReadLinks:
+            GoogleWriteSpreadsheets:
+              avatarId: steps["GoogleChooseAvatar"].avatarId
+              params: {}
+            BitlyDownloadLinks:
               avatarId: steps["BitlyChooseAvatar"].avatarId
               params: {}
-            GoogleWriteSheet:
+            GoogleWriteSpreadsheetCells:
               avatarId: steps["GoogleChooseAvatar"].avatarId
               params: {}
       else
@@ -52,11 +55,16 @@ class Recipes.BitlyExportGoogleDrive extends Recipes.Bitly
   progressBars: (step) ->
     switch step.key
       when "BitlyExportGoogleDrive"
+        skippedActivityIds = []
+        skippedActivityIds.push "GoogleWriteSpreadsheets" if step.spreadsheet
         progressBars = @generateProgressBars [
-          "BitlyExportGoogleDrive"
+          "GoogleWriteSpreadsheets"
+          "BitlyDownloadLinks"
+          "GoogleWriteSpreadsheetCells"
         ], [
-          "BitlyExportGoogleDrive"
-        ]
+          "GoogleWriteSpreadsheets"
+          "BitlyDownloadLinks"
+        ], skippedActivityIds
       else
         throw new Meteor.Error "Recipe:unknown-step-cls", "Can't generate progress bars for unknown step cls '#{step.cls}'",
           recipe: @
