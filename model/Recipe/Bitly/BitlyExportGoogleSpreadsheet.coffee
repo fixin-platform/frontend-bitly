@@ -27,7 +27,6 @@ class Recipes.BitlyExportGoogleSpreadsheet extends Recipes.Bitly
     ,
       $setOnInsert:
         cls: "BitlyExportGoogleSpreadsheet"
-        isAutorun: true
       $set:
         position: position++
     )
