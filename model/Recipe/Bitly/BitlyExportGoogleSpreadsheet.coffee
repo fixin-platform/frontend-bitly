@@ -35,17 +35,24 @@ class Recipes.BitlyExportGoogleSpreadsheet extends Recipes.Bitly
     switch step.key
       when "BitlyExportGoogleSpreadsheet"
         steps = @stepsByKey()
-        input =
+        input = if step.spreadsheet
+          BitlyDownloadLinks:
+            avatarId: steps["BitlyChooseAvatar"].avatarId
+            params: {}
           BitlyExportGoogleSpreadsheet:
-            GoogleWriteSpreadsheets:
-              avatarId: steps["GoogleChooseAvatar"].avatarId
-              params: {}
-            BitlyDownloadLinks:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-              params: {}
-            GoogleWriteSpreadsheetCells:
-              avatarId: steps["GoogleChooseAvatar"].avatarId
-              params: {}
+            avatarId: steps["GoogleChooseAvatar"].avatarId
+            params:
+              spreadsheet: step.spreadsheet
+        else
+          GoogleWriteSpreadsheets:
+            avatarId: steps["GoogleChooseAvatar"].avatarId
+            params: {}
+          BitlyDownloadLinks:
+            avatarId: steps["BitlyChooseAvatar"].avatarId
+            params: {}
+          BitlyExportGoogleSpreadsheet:
+            avatarId: steps["GoogleChooseAvatar"].avatarId
+            params: {}
       else
         throw new Meteor.Error "Recipe:unknown-step-cls", "Can't generate input for unknown step cls '#{step.cls}'",
           recipe: @
