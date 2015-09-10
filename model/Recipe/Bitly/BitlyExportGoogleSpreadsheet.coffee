@@ -44,9 +44,13 @@ class Recipes.BitlyExportGoogleSpreadsheet extends Recipes.Bitly
             params:
               spreadsheet: step.spreadsheet
         else
-          GoogleWriteSpreadsheets:
-            avatarId: steps["GoogleChooseAvatar"].avatarId
-            params: {}
+          CreateGoogleSpreadsheet:
+            FileLoader:
+              file: "asset/BitlyLinks.xlsx"
+            SpreadsheetWriter:
+              avatarId: steps["GoogleChooseAvatar"].avatarId
+              meta:
+                title: "Bitly Links (@username)"
           BitlyDownloadLinks:
             avatarId: steps["BitlyChooseAvatar"].avatarId
             params: {}
