@@ -11,8 +11,7 @@ i18n.addResourceBundle("en", "translation",
           loading_complex: "Creating a Google Spreadsheet"
           loaded_simple: "Created <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
           loaded_complex: "Created <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
-          skipped_simple: "Reopened <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
-          skipped_complex: "Reopened <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
+          skipped: "Reused <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
           failed: "An error occurred while creating a Google Spreadsheet"
           cancelled: "Couldn't create a Google Spreadsheet because preceding tasks failed"
         DownloadBitlyLinks:
@@ -22,6 +21,7 @@ i18n.addResourceBundle("en", "translation",
           loading_complex: "Loading Bitly links, {{current}} of {{total}} so far"
           loaded_simple: "Loaded Bitly links, {{current}} total"
           loaded_complex: "Loaded Bitly links, {{current}} of {{total}} total"
+          skipped: "Skipped loading Bitly links"
           failed: "An error occurred while loading Bitly links"
           cancelled: "Couldn't load Bitly links because preceding tasks failed"
         ExportBitlyDataToGoogleSpreadsheet:
@@ -31,6 +31,7 @@ i18n.addResourceBundle("en", "translation",
           loading_complex: "Exporting Bitly links, {{current}} of {{total}} so far"
           loaded_simple: "Exported Bitly links, {{current}} total"
           loaded_complex: "Exported Bitly links, {{current}} of {{total}} total"
+          skipped: "Skipped exporting Bitly links"
           failed: "An error occurred while exporting Bitly links"
           cancelled: "Couldn't export Bitly links because preceding tasks failed"
 , true)
