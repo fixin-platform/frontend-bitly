@@ -92,7 +92,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
     switch step.key
       when "ExportBitlyDataToGoogleSpreadsheet"
         skippedActivityIds = []
-        skippedActivityIds.push "GoogleWriteSpreadsheets" if step.spreadsheet
+        skippedActivityIds.push "CreateGoogleSpreadsheet" if step.spreadsheet
         progressBars = @generateProgressBars [
           "CreateGoogleSpreadsheet"
           "DownloadBitlyLinks"

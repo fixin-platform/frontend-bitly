@@ -4,7 +4,7 @@ i18n.addResourceBundle("en", "translation",
       icon: "bolt"
       default: "Enable automatic export of Bitly data to Google Drive"
       progressBars:
-        GoogleWriteSpreadsheets:
+        CreateGoogleSpreadsheet:
           waiting: "Will create a Google Spreadsheet for Bitly links"
           connecting: "Connecting to Google Spreadsheet API"
           loading_simple: "Creating a Google Spreadsheet"
@@ -13,9 +13,9 @@ i18n.addResourceBundle("en", "translation",
           loaded_complex: "Created <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
           skipped_simple: "Reopened <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
           skipped_complex: "Reopened <a href='{{spreadsheet.link}}'>{{spreadsheet.name}}</a>"
-          failed: "An error occurred while loading Freshdesk users"
-          cancelled: "Couldn't load Freshdesk users because preceding tasks failed"
-        BitlyDownloadLinks:
+          failed: "An error occurred while creating a Google Spreadsheet"
+          cancelled: "Couldn't create a Google Spreadsheet because preceding tasks failed"
+        DownloadBitlyLinks:
           waiting: "Will load Bitly links after finishing preceding tasks"
           connecting: "Connecting to Bitly API"
           loading_simple: "Loading Bitly links, {{current}} so far"
@@ -24,7 +24,7 @@ i18n.addResourceBundle("en", "translation",
           loaded_complex: "Loaded Bitly links, {{current}} of {{total}} total"
           failed: "An error occurred while loading Bitly links"
           cancelled: "Couldn't load Bitly links because preceding tasks failed"
-        GoogleWriteSpreadsheetCells:
+        ExportBitlyDataToGoogleSpreadsheet:
           waiting: "Will export Bitly links after finishing preceding tasks"
           connecting: "Connecting to database"
           loading_simple: "Exporting Bitly links, {{current}} so far"
