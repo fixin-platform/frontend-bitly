@@ -35,6 +35,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
     switch step.key
       when "ExportBitlyDataToGoogleSpreadsheet"
         steps = @stepsByKey()
+        username = Avatars.findOne(steps["GoogleChooseAvatar"].avatarId).name
         input = if step.spreadsheet
           DownloadBitlyLinks:
             ReadBitlyLinks:
@@ -63,7 +64,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
             SpreadsheetWriter:
               avatarId: steps["GoogleChooseAvatar"].avatarId
               meta:
-                title: "Bitly Links (@username)"
+                title: "Bitly Links (#{username})"
           DownloadBitlyLinks:
             ReadBitlyLinks:
               avatarId: steps["BitlyChooseAvatar"].avatarId
