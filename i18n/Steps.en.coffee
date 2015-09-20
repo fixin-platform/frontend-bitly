@@ -11,7 +11,7 @@ i18n.addResourceBundle("en", "translation",
           loading_complex: "Creating a Google Spreadsheet"
           loaded_simple: "Created <a target=\"_blank\" href='{{spreadsheet.alternateLink}}'>{{spreadsheet.title}}</a>"
           loaded_complex: "Created <a target=\"_blank\" href='{{spreadsheet.alternateLink}}'>{{spreadsheet.title}}</a>"
-          skipped: "Reused <a href='{{spreadsheet.alternateLink}}'>{{spreadsheet.title}}</a>"
+          skipped: "Reused <a target=\"_blank\" href='{{spreadsheet.alternateLink}}'>{{spreadsheet.title}}</a>"
           failed: "An error occurred while creating a Google Spreadsheet"
           cancelled: "Couldn't create a Google Spreadsheet because preceding tasks failed"
         DownloadBitlyLinks:
