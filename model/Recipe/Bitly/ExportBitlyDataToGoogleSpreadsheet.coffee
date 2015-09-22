@@ -51,8 +51,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
           ExportBitlyDataToGoogleSpreadsheet:
             GoogleWriter:
               avatarId: steps["GoogleChooseAvatar"].avatarId
-              spreadsheet:
-                id: step.spreadsheet.id
+              spreadsheet: step.spreadsheet
             LinkLoader:
               avatarId: steps["BitlyChooseAvatar"].avatarId
             ReferrerLoader:
