@@ -1,35 +1,18 @@
 class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
   generateSteps: ->
-    position = 1
-
-    @generateStep(
+    @insertStep
       key: "BitlyChooseAvatar"
-    ,
-      $setOnInsert:
-        cls: "BitlyChooseAvatar"
-        api: "Bitly"
-        scopes: ["*"]
-      $set:
-        position: position++
-    )
-    @generateStep(
+      cls: "BitlyChooseAvatar"
+      api: "Bitly"
+      scopes: ["*"]
+    @insertStep
       key: "GoogleChooseAvatar"
-    ,
-      $setOnInsert:
-        cls: "GoogleChooseAvatar"
-        api: "Google"
-        scopes: ["https://www.googleapis.com/auth/drive", "https://spreadsheets.google.com/feeds"]
-      $set:
-        position: position++
-    )
-    @generateStep(
+      cls: "GoogleChooseAvatar"
+      api: "Google"
+      scopes: ["https://www.googleapis.com/auth/drive", "https://spreadsheets.google.com/feeds"]
+    @insertStep
       key: "ExportBitlyDataToGoogleSpreadsheet"
-    ,
-      $setOnInsert:
-        cls: "ExportBitlyDataToGoogleSpreadsheet"
-      $set:
-        position: position++
-    )
+      cls: "ExportBitlyDataToGoogleSpreadsheet"
 
   input: (step) ->
     switch step.key

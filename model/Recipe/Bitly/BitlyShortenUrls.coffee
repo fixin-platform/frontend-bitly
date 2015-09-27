@@ -1,5 +1,7 @@
 class Recipes.BitlyShortenUrls extends Recipes.Bitly
   generateSteps: ->
+    throw new Error("generateSteps() format changed, see ExportBitlyDataToGoogleSpreadsheet")
+
     position = 1
 
     @generateStep(
