@@ -2,7 +2,7 @@ i18n.addResourceBundle("en", "translation",
   Steps:
     ExportBitlyDataToGoogleSpreadsheet:
       icon: "bolt"
-      default: "Enable automatic export of Bitly data to Google Drive"
+      default: "Activate daily export of Bitly links and referrers to Google Spreadsheet"
       progressBars:
         CreateGoogleSpreadsheet:
           waiting: "Will create a Google Spreadsheet for Bitly links"
