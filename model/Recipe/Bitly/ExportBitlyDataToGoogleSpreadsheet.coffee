@@ -13,6 +13,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
     @insertStep
       key: "ExportBitlyDataToGoogleSpreadsheet"
       cls: "ExportBitlyDataToGoogleSpreadsheet"
+      version: "1.0.1"
 
   input: (step) ->
     switch step.key
