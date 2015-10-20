@@ -21,24 +21,20 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
         steps = @stepsByKey()
         username = Avatars.findOne(steps["BitlyChooseAvatar"].avatarId).name
         input = if step.spreadsheet
-          DownloadBitlyLinks:
-            ReadBitlyLinks:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            ReadBitlyClicks:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            ReadBitlyReferrers:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            SaveBitlyLinks:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            SaveBitlyReferrers:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
           ExportBitlyDataToGoogleSpreadsheet:
+            DownloadBitlyLinks:
+              ReadBitlyLinks:
+                avatarId: steps["BitlyChooseAvatar"].avatarId
+              ReadBitlyClicks:
+                avatarId: steps["BitlyChooseAvatar"].avatarId
+              ReadBitlyReferrers:
+                avatarId: steps["BitlyChooseAvatar"].avatarId
             GoogleWriter:
               avatarId: steps["GoogleChooseAvatar"].avatarId
               spreadsheet: step.spreadsheet
-            LinkLoader:
+            SaveBitlyLinks:
               avatarId: steps["BitlyChooseAvatar"].avatarId
-            ReferrerLoader:
+            SaveBitlyReferrers:
               avatarId: steps["BitlyChooseAvatar"].avatarId
         else
           CreateGoogleSpreadsheet:
@@ -48,23 +44,19 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
               avatarId: steps["GoogleChooseAvatar"].avatarId
               meta:
                 title: "Bitly Links (#{username})"
-          DownloadBitlyLinks:
-            ReadBitlyLinks:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            ReadBitlyClicks:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            ReadBitlyReferrers:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
+          ExportBitlyDataToGoogleSpreadsheet:
+            DownloadBitlyLinks:
+              ReadBitlyLinks:
+                avatarId: steps["BitlyChooseAvatar"].avatarId
+              ReadBitlyClicks:
+                avatarId: steps["BitlyChooseAvatar"].avatarId
+              ReadBitlyReferrers:
+                avatarId: steps["BitlyChooseAvatar"].avatarId
+            GoogleWriter:
+                avatarId: steps["GoogleChooseAvatar"].avatarId
             SaveBitlyLinks:
               avatarId: steps["BitlyChooseAvatar"].avatarId
             SaveBitlyReferrers:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-          ExportBitlyDataToGoogleSpreadsheet:
-            GoogleWriter:
-              avatarId: steps["GoogleChooseAvatar"].avatarId
-            LinkLoader:
-              avatarId: steps["BitlyChooseAvatar"].avatarId
-            ReferrerLoader:
               avatarId: steps["BitlyChooseAvatar"].avatarId
       else
         throw new Meteor.Error "Recipe:unknown-step-cls", "Can't generate input for unknown step cls '#{step.cls}'",
@@ -79,11 +71,9 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
         skippedActivityIds.push "CreateGoogleSpreadsheet" if step.spreadsheet
         progressBars = @generateProgressBars [
           "CreateGoogleSpreadsheet"
-          "DownloadBitlyLinks"
           "ExportBitlyDataToGoogleSpreadsheet"
         ], [
           "CreateGoogleSpreadsheet"
-          "DownloadBitlyLinks"
         ], skippedActivityIds
       else
         throw new Meteor.Error "Recipe:unknown-step-cls", "Can't generate progress bars for unknown step cls '#{step.cls}'",
