@@ -25,6 +25,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
             DownloadBitlyLinks:
               ReadBitlyLinks:
                 avatarId: steps["BitlyChooseAvatar"].avatarId
+                params: step.BitlyParams
               ReadBitlyClicks:
                 avatarId: steps["BitlyChooseAvatar"].avatarId
               ReadBitlyReferrers:
@@ -48,6 +49,7 @@ class Recipes.ExportBitlyDataToGoogleSpreadsheet extends Recipes.Bitly
             DownloadBitlyLinks:
               ReadBitlyLinks:
                 avatarId: steps["BitlyChooseAvatar"].avatarId
+                params: step.BitlyParams
               ReadBitlyClicks:
                 avatarId: steps["BitlyChooseAvatar"].avatarId
               ReadBitlyReferrers:
